@@ -67,10 +67,10 @@ def main() -> None:
         </tr>
         <tr>
             <th></th>
-            <th><abbr title="Time between the puzzle opening at midnight UTC-5 and achieving the first star">Time</abbr></th>
+            <th>Time</th>
             <th>Rank</th>
             <th>Score</th>
-            <th><abbr title="Time between the puzzle opening at midnight UTC-5 and achieving the second star">Time</abbr></th>
+            <th>Time</th>
             <th>Rank</th>
             <th>Score</th>
             <th>Rank</th>
