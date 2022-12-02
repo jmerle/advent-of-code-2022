@@ -20,7 +20,9 @@ def main() -> None:
 
     input_url = f"https://adventofcode.com/2022/day/{args.day}/input"
 
-    input_response = requests.get(input_url, cookies={"session": os.environ["SESSION_COOKIE"]})
+    input_response = requests.get(input_url,
+                                  cookies={"session": os.environ["SESSION_COOKIE"]},
+                                  headers={"User-Agent": "https://github.com/jmerle/advent-of-code-2022/blob/master/scripts/download.py by jaspervmerle@gmail.com"})
     input_response.raise_for_status()
 
     input_file.write_text(input_response.text.strip() + "\n", encoding="utf-8")
