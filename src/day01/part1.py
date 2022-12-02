@@ -1,8 +1,7 @@
 import sys
-from pathlib import Path
 
 def main() -> None:
-    data = (Path(__file__).parent / sys.argv[1]).read_text(encoding="utf-8").strip()
+    data = sys.stdin.read().strip()
 
     m = 0
 

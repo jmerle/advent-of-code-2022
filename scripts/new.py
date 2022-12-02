@@ -3,10 +3,9 @@ from pathlib import Path
 
 PYTHON_TEMPLATE = """
 import sys
-from pathlib import Path
 
 def main() -> None:
-    data = (Path(__file__).parent / sys.argv[1]).read_text(encoding="utf-8").strip()
+    data = sys.stdin.read().strip()
 
 if __name__ == "__main__":
     main()

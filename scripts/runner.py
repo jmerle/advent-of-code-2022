@@ -15,7 +15,8 @@ def main() -> None:
     project_root = Path(__file__).parent.parent
 
     process = None
-    process_file = None
+    process_code_file = None
+    process_data_file = None
 
     try:
         for changes in watch(project_root):
@@ -29,8 +30,8 @@ def main() -> None:
 
                 if file.name in ["part1.py", "part2.py"]:
                     file_to_run = file
-                elif file.name == args.data_file_name and process_file is not None:
-                    file_to_run = process_file
+                elif file.name == args.data_file_name and process_code_file is not None:
+                    file_to_run = process_code_file
                 else:
                     continue
 
@@ -39,17 +40,21 @@ def main() -> None:
                 if process is not None and process.poll() is None:
                     print("Killing previous process")
                     process.kill()
+                    process_data_file.close()
+
+                module_name = str(file_to_run.relative_to(project_root)).replace("/", ".").replace(".py", "")
+                data_file = (file_to_run.parent / args.data_file_name).open("r")
 
                 print()
 
-                module_name = str(file_to_run.relative_to(project_root)).replace("/", ".").replace(".py", "")
-
-                process = subprocess.Popen([sys.executable, "-m", module_name, args.data_file_name], cwd=project_root)
-                process_file = file_to_run
+                process = subprocess.Popen([sys.executable, "-m", module_name], cwd=project_root, stdin=data_file)
+                process_code_file = file_to_run
+                process_data_file = data_file
     except KeyboardInterrupt:
-        if process is not None:
+        if process is not None and process.poll() is None:
             print("Killing current process")
             process.kill()
+            process_data_file.close()
 
         sys.exit(1)
 
