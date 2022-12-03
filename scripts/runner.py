@@ -20,35 +20,35 @@ def main() -> None:
 
     try:
         for changes in watch(project_root):
-            for change, file in changes:
+            for change, changed_file in changes:
                 if change != Change.modified:
                     continue
 
-                file = Path(file)
-                if not file.is_file():
+                changed_file = Path(changed_file)
+                if not changed_file.is_file():
                     continue
 
-                if file.name in ["part1.py", "part2.py"]:
-                    file_to_run = file
-                elif file.name == args.data_file_name and process_code_file is not None:
-                    file_to_run = process_code_file
+                if changed_file.name in ["part1.py", "part2.py"]:
+                    code_file = changed_file
+                elif changed_file.name == args.data_file_name and process_code_file is not None:
+                    code_file = process_code_file
                 else:
                     continue
 
-                print(f"Running {file_to_run.relative_to(project_root)} on {args.data_file_name}")
+                print(f"Running {code_file.relative_to(project_root)} on {args.data_file_name}")
 
                 if process is not None and process.poll() is None:
                     print("Killing previous process")
                     process.kill()
                     process_data_file.close()
 
-                module_name = str(file_to_run.relative_to(project_root)).replace("/", ".").replace(".py", "")
-                data_file = (file_to_run.parent / args.data_file_name).open("r")
+                module_name = str(code_file.relative_to(project_root)).replace("/", ".").replace(".py", "")
+                data_file = (code_file.parent / args.data_file_name).open("r")
 
                 print()
 
                 process = subprocess.Popen([sys.executable, "-m", module_name], cwd=project_root, stdin=data_file)
-                process_code_file = file_to_run
+                process_code_file = code_file
                 process_data_file = data_file
     except KeyboardInterrupt:
         if process is not None and process.poll() is None:
