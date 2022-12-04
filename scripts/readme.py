@@ -7,7 +7,8 @@ from pathlib import Path
 OVERALL_LEADERBOARD_RANKS = [
     24, # Day 1
     9,  # Day 2
-    26  # Day 3
+    26, # Day 3
+    37, # Day 4
 ]
 
 def main() -> None:
