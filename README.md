@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-This repository contains my [Advent of Code 2022](https://adventofcode.com/2022) solutions in Python. I focus on solving speed over code quality, so the code in here may be a bit sloppy.
+This repository contains my [Advent of Code 2022](https://adventofcode.com/2022) solutions in Python. I focus on solving speed over code quality, so the code in here may be a bit sloppy. I don't make major changes after submitting the correct answer.
 
 ## Results
 
