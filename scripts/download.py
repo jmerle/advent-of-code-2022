@@ -25,7 +25,7 @@ def main() -> None:
                                   headers={"User-Agent": "https://github.com/jmerle/advent-of-code-2022/blob/master/scripts/download.py by jaspervmerle@gmail.com"})
     input_response.raise_for_status()
 
-    input_file.write_text(input_response.text.strip() + "\n", encoding="utf-8")
+    input_file.write_text(input_response.text, encoding="utf-8")
     print(f"Successfully wrote input data to {input_file.relative_to(project_root)}")
 
 if __name__ == "__main__":

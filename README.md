@@ -83,6 +83,20 @@ This repository contains my [Advent of Code 2022](https://adventofcode.com/2022)
             <td>37</td>
             <td>296</td>
         </tr>
+        <tr>
+            <td>
+                <a href="https://adventofcode.com/2022/day/5">Day 5</a>
+                (<a href="https://github.com/jmerle/advent-of-code-2022/tree/master/src/day05">code</a>)
+            </td>
+            <td>00:17:42</td>
+            <td>2125</td>
+            <td>0</td>
+            <td>00:19:37</td>
+            <td>1786</td>
+            <td>0</td>
+            <td>50</td>
+            <td>296</td>
+        </tr>
     </tbody>
 </table>
 <!-- results-end -->
