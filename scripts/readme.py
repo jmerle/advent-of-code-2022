@@ -11,6 +11,7 @@ OVERALL_LEADERBOARD_RANKS = [
     37, # Day 4
     50, # Day 5
     36, # Day 6
+    41, # Day 7
 ]
 
 def main() -> None:
