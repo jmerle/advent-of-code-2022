@@ -14,39 +14,33 @@ def main() -> None:
 
     for y in range(height):
         for x in range(width):
-            if y == 0 or x == 0 or y == height - 1 or x == width - 1:
-                continue
-
             score = 1
-
-            row = grid[y]
-            col = [row[x] for row in grid]
 
             t = 0
             for i in range(x - 1, -1, -1):
                 t += 1
-                if row[i] >= grid[y][x]:
+                if grid[y][i] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(x + 1, width):
                 t += 1
-                if row[i] >= grid[y][x]:
+                if grid[y][i] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(y - 1, -1, -1):
                 t += 1
-                if col[i] >= grid[y][x]:
+                if grid[i][x] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(y + 1, height):
                 t += 1
-                if col[i] >= grid[y][x]:
+                if grid[i][x] >= grid[y][x]:
                     break
             score *= t
 
