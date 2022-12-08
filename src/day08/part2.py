@@ -24,45 +24,29 @@ def main() -> None:
 
             t = 0
             for i in range(x - 1, -1, -1):
-                if row[i] < grid[y][x]:
-                    t += 1
-                elif i != x - 1 and row[i] >= grid[y][x]:
-                    t += 1
-                    break
-                else:
+                t += 1
+                if row[i] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(x + 1, width):
-                if row[i] < grid[y][x]:
-                    t += 1
-                elif i != x + 1 and row[i] >= grid[y][x]:
-                    t += 1
-                    break
-                else:
+                t += 1
+                if row[i] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(y - 1, -1, -1):
-                if col[i] < grid[y][x]:
-                    t += 1
-                elif i != y - 1 and col[i] >= grid[y][x]:
-                    t += 1
-                    break
-                else:
+                t += 1
+                if col[i] >= grid[y][x]:
                     break
             score *= t
 
             t = 0
             for i in range(y + 1, height):
-                if col[i] < grid[y][x]:
-                    t += 1
-                elif i != y + 1 and col[i] >= grid[y][x]:
-                    t += 1
-                    break
-                else:
+                t += 1
+                if col[i] >= grid[y][x]:
                     break
             score *= t
 
