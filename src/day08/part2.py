@@ -48,6 +48,5 @@ def main() -> None:
 
     print(max_score)
 
-
 if __name__ == "__main__":
     main()
