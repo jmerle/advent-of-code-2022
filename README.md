@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-This repository contains my [Advent of Code 2022](https://adventofcode.com/2022) solutions in Python. I focus on solving speed over code quality, so the code in here may be a bit sloppy. I don't make major changes after submitting the correct answer.
+This repository contains my [Advent of Code 2022](https://adventofcode.com/2022) solutions in Python. I focus on solving speed over code quality, so the code in here may be a bit sloppy.
 
 ## Results
 
@@ -235,6 +235,20 @@ This repository contains my [Advent of Code 2022](https://adventofcode.com/2022)
             <td>2626</td>
             <td>0</td>
             <td>89</td>
+            <td>449</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://adventofcode.com/2022/day/16">Day 16</a>
+                (<a href="https://github.com/jmerle/advent-of-code-2022/tree/master/src/day16">code</a>)
+            </td>
+            <td>01:45:40</td>
+            <td>1582</td>
+            <td>0</td>
+            <td>06:15:26</td>
+            <td>2431</td>
+            <td>0</td>
+            <td>92</td>
             <td>449</td>
         </tr>
     </tbody>
