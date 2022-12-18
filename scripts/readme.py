@@ -22,6 +22,7 @@ OVERALL_LEADERBOARD_RANKS = [
     89, # Day 15
     92, # Day 16
     97, # Day 17
+    None, # Day 18
 ]
 
 def main() -> None:
@@ -52,6 +53,7 @@ def main() -> None:
         part2_rank = int(parts[5])
         part2_score = int(parts[6])
 
+        overall_rank = OVERALL_LEADERBOARD_RANKS[day - 1] or ">100"
         overall_score += part1_score + part2_score
 
         rows += f"""
@@ -66,7 +68,7 @@ def main() -> None:
             <td>{part2_time}</td>
             <td>{part2_rank}</td>
             <td>{part2_score}</td>
-            <td>{OVERALL_LEADERBOARD_RANKS[day - 1]}</td>
+            <td>{overall_rank}</td>
             <td>{overall_score}</td>
         </tr>"""
 
